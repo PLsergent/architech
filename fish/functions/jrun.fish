@@ -7,6 +7,11 @@
 
 function jrun
     set app (echo $argv | sed 's/.java//')
-    javac -d "build" {$app}.java; and cd "build"; java $app
+
+    if not [ -e build ]
+        mkdir build
+    end
+
+    javac -d "build" {$app}.java; and cd "build"; java $app; or cd -
     cd -
 end

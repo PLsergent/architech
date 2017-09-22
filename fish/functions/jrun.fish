@@ -1,17 +1,6 @@
-# Make a directory for the project and then a "build" directory in it.
-# Put your ".java" files in the base of the project and make it your cwd.
-# Then just run "jrun <myclass>.java"
+function jrun --description 'Compile and run a Java program'
+    set package (echo $argv | cut -d'/' -f1)
+    set class (echo $argv | cut -d'/' -f2)
 
-# !! DON'T PUT "package" at the top of your class !!
-
-
-function jrun
-    set app (echo $argv | sed 's/.java//')
-
-    if not [ -e build ]
-        mkdir build
-    end
-
-    javac -d "build" {$app}.java; and cd "build"; java $app; or cd -
-    cd -
+    javac {$package}/{$class}.java; and java {$package}.{$class}
 end

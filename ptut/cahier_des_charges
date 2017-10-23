@@ -1,0 +1,11 @@
+Objectifs:
+  Pouvoir vérouiller une session puis la déverrouiller avec reconnaissance faciale.
+
+Tâches:
+  - Reconnaissance faciale en Python ~ 5 semaines Matthieu, PL, David
+  - Implémentation système ~ 10 Pl, Bruno, David
+  - Préparation d'un déploiement continue du projet ~ 3 Bruno
+  - Redaction cahier des charges Sagar
+
+Contraintes:
+   - l'écran doit pouvoir être déverrouiller par mot de passe au cas où il y a des difficultés pour la reconnaissance faciale.

@@ -1,0 +1,5 @@
+Gestionnaire de versions centralisée : il n'existe qu'un seul dépôt qui fait référence, les utilisateurs travail sur une copie, impossible de travailler hors connexion
+
+CVS : Conccurent versions system
+créé en 1990 utilisé par les projets logiciels libres
+successeur de SCCS

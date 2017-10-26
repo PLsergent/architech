@@ -1,5 +1,47 @@
-Gestionnaire de versions centralisée : il n'existe qu'un seul dépôt qui fait référence, les utilisateurs travail sur une copie, impossible de travailler hors connexion
+Principe de base d'un SGV : notions de copies locales et dépôt
+Le problème principal est que si deux personnes travaillent depuis la copie d'un même dépôt, la première personne qui push ses modifications sur le repo risque de perdre ses modifications, si la deuxième personne push à son tour sa copie modifié. 
+La solution apporté est que si la deuxième personne souhaite réaliser un push sur le repo elle doit d'abord mettre à jour sa version. Une fois mis à jour elle récupère la nouvelle version du repo, sans perdre ses modifications, elle peut ensuite fusionner sa version avec celle du dépôt. Et l'autre personne peut récupérer la version avec ses modifications et les modifications de la deuxième personne.
+
+Un SGV va gérer le mécanisme lecture-fusion-écriture 
+  
+Gestionnaire de versions centralisée : 
+- il n'existe qu'un seul dépôt qui fait référence, 
+- les utilisateurs travaillent sur une copie, 
+
+Qualités : 
+	- technologie éprouvée
+	- largement disponible
+	- sécurisé
+
+Defaults : 
+	- échange entre les dépôts impossible
+	- échange entre les copies locales impossible
+	- travail hors connexion impossible
+	- dépendant du serveur
+
+
+Apache Subversion (SVN) succède à CVS qui succède lui même à SCCS
 
 CVS : Conccurent versions system
-créé en 1990 utilisé par les projets logiciels libres
-successeur de SCCS
+1990 : utilisé par les projets logiciels libres
+
+SCCS : Source Code Control System
+laboratoire bell
+
+
+Principe SVN :
+
+- serveur centralisé et unique où se situent :
+	- les fichiers de références (le dépôt ou repository)
+	- un logiciel serveur SVN tournant en tâche de fond
+
+- des postes clients sur lesquels se trouvent :
+	- copie locale du repo, eventuellement modifié
+	- logiciel client permettant la synchronisation, manuelle et/ou automatisée entre chaque client et le serveur de ref
+
+Gestionnaire de versions décentralisées :
+- possibilité de travailler hors connexion
+- indépendant d'un repo centralisé 
+- échange possible entre les développeurs
+
+Chaque développeur a son propre dépôt en local ainsi que sa copie de travail, il gère ainsi ses branches et versions en locales

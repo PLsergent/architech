@@ -6,3 +6,52 @@ Diagramme Gant (planing) répartition tâche
 Présentation produit sous forme de README
 Explication principe reconnaissance faciale
 Test intégration continue
+
+Note : ne pas parler de la présentation orale dans le cahier des charges (mention en annexe?)
+
+Sommaire :
+
+I) Présentation membres du groupe
+	- Qualification
+	- Motivation
+	- Hiérarchisation (Bruno chief)
+
+II) Présentation projet, public destiné, buts
+	- pourquoi ?
+	- pourquoi en open source 
+	- outil, présentation des librairies
+	- architecture linux, distribution
+	- principe de la librairie facial_recognition
+
+III) Stratégie développement 
+ 	- modèle de dev en V
+		- URS, SRS, SDS
+		- SRS > Continious integration, URS > Scénario de test
+		- schéma
+		- système de commentaires/reviews Github
+	- politique de dev : agile
+	- présentation public 
+		- rédaction d'un README
+
+IV) Phases du projet, distribution des tâches
+	- diagramme de Gant
+	- planning
+	- (auto)formation
+	
+V) URS (User Requirement Specifications)
+	- ce doit POUVOIR faire le software
+
+VI) SRS (Software Requirement Specifications)
+	- comment on matérialise les URS en terme de fonction
+
+VII) SDS (Software Design  Specifications)
+	- code / exemple option / écrans, enchainements écrans
+
+VIII) Implémentation système
+	- IQ (Installation Qualification)
+	- explication générale :
+		- accès système : verrouillage, déverrouillage (acpi)
+		- scripts
+
+Annexes : 
+	- Acronyme, software, dictionary

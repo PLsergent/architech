@@ -3,10 +3,12 @@ Le problème principal est que si deux personnes travaillent depuis la copie d'u
 La solution apporté est que si la deuxième personne souhaite réaliser un push sur le repo elle doit d'abord mettre à jour sa version. Une fois mis à jour elle récupère la nouvelle version du repo, sans perdre ses modifications, elle peut ensuite fusionner sa version avec celle du dépôt. Et l'autre personne peut récupérer la version avec ses modifications et les modifications de la deuxième personne.
 
 Un SGV va gérer le mécanisme lecture-fusion-écriture 
-  
+
+I)Gestionnaire de versions centralisée CVCS
+
 Gestionnaire de versions centralisée : 
-- il n'existe qu'un seul dépôt qui fait référence, 
-- les utilisateurs travaillent sur une copie, 
+- il n'existe qu'un seul dépôt qui fait référence
+- les utilisateurs travaillent sur une copie
 
 Qualités : 
 	- technologie éprouvée
@@ -28,7 +30,6 @@ CVS : Conccurent versions system
 SCCS : Source Code Control System
 laboratoire bell
 
-
 Principe SVN :
 
 - serveur centralisé et unique où se situent :
@@ -39,9 +40,23 @@ Principe SVN :
 	- copie locale du repo, eventuellement modifié
 	- logiciel client permettant la synchronisation, manuelle et/ou automatisée entre chaque client et le serveur de ref
 
+II)Gestionnaire de versions décentralisées DVCS
+
 Gestionnaire de versions décentralisées :
-- possibilité de travailler hors connexion
-- indépendant d'un repo centralisé 
-- échange possible entre les développeurs
+- dépôt propre à chaque dev
+- copie propre à chaque dev
 
 Chaque développeur a son propre dépôt en local ainsi que sa copie de travail, il gère ainsi ses branches et versions en locales
+Possibilité de communications entre les dépôts (clone, push, pull)
+Et possibilité de travailler avec un dépôt central (GitHub, service en ligne), si le serveur venait à disparaître et si différents systèmes collaboraient via ce serveur, n'importe quel dépôt local  peut être copié sur le serveur pour le restaurer car le clonage permet de dupliquer complètement le dépôt et pas seulement la dernière version.
+
+Les SGV décentralisées tel que Git et Mercurial comblent tous les défaults des SGV centralisées:
+	- communication possible entre les dépôts
+	- possibilité de mettre en place un dépôt central
+	- travail hors connexion
+	- indépendant du serveur
+	- gestion des branches 
+	- gestion des merges
+
+Mais possède quelques défauts tout de même : 
+	- compléxité : ligne de cmd, fait par des dev pour des dev

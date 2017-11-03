@@ -1,0 +1,48 @@
+diapo 1:
+Principe de base d'un CVS : 
+	- Gérer le mécanisme lecture-fusion-écriture
+	+ schéma
+
+diapo 2:
+Gestionnaire de versions centralisée CVCS :
+	- Un seul dépôt de référence (serveur)
+	- Les utilisateurs travaillent sur une copie
+	+ schéma
+
+diapo 3: 
+Qualités :
+	- technologie éprouvée
+	- largement disponible
+	- sécurisé
+
+Défauts :
+	- échange entre les dépôts impossible
+	- échange entre les copies locales impossible
+	- travail hors connexion impossible
+	- dépendant du serveur
+
+diapo 4:
+Présentation SVN :
+	- serveur centralisé et unique
+		- les fichiers de reférences (le dépôt ou repository)
+		- un logiciel serveur SVN tournant en tâche de fond
+	- postes clients
+		- copie locale du repo, éventuellement modifié
+		- logiciel client permettant la synchronisation manuelle et /ou automatisée entre chaque client et le serveur de ref
+
+diapo 5 : 
+Gestionnaire de versions décentralisée DVCS
+	- dépôt propre à chaque dev
+	- copie propre à chaque dev
+
+diapo 6 :
+Qualités :
+	- communication possible entre les dépôts
+	- possibilité de mettre en place un dépôt central (serveur)
+	- travail hors connexion possible
+	- indépendant du serveur
+	- gestion des branches 
+	- gestion des merges
+
+Défauts :
+	- complexité (Git)

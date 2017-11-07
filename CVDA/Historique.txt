@@ -1,0 +1,59 @@
+                        HISTORIQUE GESTIONNAIRE DE VERSIONS
+
+
+Initialement dédiés à la gestion de code source pour les projets logiciels
+mais également :
+  - documentation
+  - site web
+travail collaboratif :
+  - facilité d’échange
+  - traçabilité
+  - gestion des conflits
+
+Il existe 2 types de systèmes, les centralisés et les décentralisés :
+
+1990  - CVS (Concurrent Versioning System) -> Vieux
+2000  - SVN (Subversion)
+
+2005  - Git
+2005  - Mercurial
+2005  - Bazaar
+- ...
+
+GNU SCCS (1972) (Source Code Control System) :
+Dév en 1972 par Marc J. Rochkind au Laboratoires Bell pour les System/370 d’IBM
+puis a été porté sur Unix.
+Pendant de nombreuses années, SCCS fut le seul logiciel de gestion de versions
+disponible sur les systèmes Unix, avant qu'il ne soit supplanté par RCS puis
+par les gestionnaires de versions modernes comme CVS, ou git.
+
+
+GNU RCS (1982) : RCS était un projet universitaire au début des années 1980,
+le projet a été conserver par Walter F. Tichy pendant + d'une décénie.
+
+CVS (1990) : CVS combler les lacunes de RCS car il permettait, dans le cadre
+d'un projet logiciel, d'impliquait un arbre de fichiers et toute une équipe
+projet.
+Le logiciel s'appuyait sur les bases de RCS en lui ajoutant une couche de
+transmission de fichiers par le réseau, donc permettait le travail d'équipe.
+
+SVN (2000) : SVN ou Subversion est un projet né pour combler les lacunes de CVS
+tels que :
+  - La non reconnaissance de l'ensemble du projet comme une seule oeuvre ce qui
+crée des problèmes d'incohérence dans les versions des fichiers du projet.
+  - Les déplacements, suppressions, ... n'était pas versionnés
+Ainsi que d'autres soucis de cohérence...
+Les solutions apportées par SVN étaient :
+    - des commits ou livraison de modifications ;
+    - une notion de projet (composé d’une collection de fichiers) suivi dans sa
+globalité ;
+    - un suivi des opérations du système de fichiers sans perdre l’historique
+de chaque élément.
+
+Git/Mecurial : ces gestionnaires de versions décentralisés permettent d'aller
+encore plus loin que leurs ancêtres car ils permettent de versionné des grands
+projets open source conduis par des milliers de contributeurs.
+Les dépots central mais chacun peut :
+    - livrer son travail, sans que cela ne nécessite de connexion internet, ni
+d’autorisation particulière, par l’opération commit.
+    - intégrer le travail de ses collaborateurs, par l’opération pull.

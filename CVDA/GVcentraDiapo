@@ -29,11 +29,12 @@ Présentation SVN :
 	- postes clients
 		- copie locale du repo, éventuellement modifié
 		- logiciel client permettant la synchronisation manuelle et /ou automatisée entre chaque client et le serveur de ref
-
++schéma
 diapo 5 : 
 Gestionnaire de versions décentralisée DVCS
 	- dépôt propre à chaque dev
 	- copie propre à chaque dev
+	+ schéma
 
 diapo 6 :
 Qualités :

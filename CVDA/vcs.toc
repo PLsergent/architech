@@ -1,8 +1,0 @@
-\select@language {french}
-\beamer@sectionintoc {1}{Histoire}{3}{0}{1}
-\beamer@sectionintoc {2}{Décentralisé vs Centralisé}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Principe de base d'un CVS}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{Gestionnaire de versions centralisée CVCS}{7}{0}{2}
-\beamer@subsectionintoc {2}{3}{Présentation SVN}{9}{0}{2}
-\beamer@subsectionintoc {2}{4}{Gestionnaire de versions décentralisée DVCS}{10}{0}{2}
-\beamer@sectionintoc {3}{Git vs Mercurial}{12}{0}{3}

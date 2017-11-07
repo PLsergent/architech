@@ -1,0 +1,120 @@
+\section{Git vs Mercurial}
+\subsection{Format du dépôt}
+\begin{frame}{Format du dépôt}
+  \begin{columns}[T]
+
+    \begin{column}{.5\textwidth}
+    \textsc{Mercurial}
+
+    \vspace{\baselineskip}
+
+    A tout misé sur les logs en append-only, optimiser la recherche sur le
+    disque de nos machines
+    \end{column}
+
+    \begin{column}{.5\textwidth}
+    \textsc{Git}
+
+    \vspace{\baselineskip}
+
+    Stocke chaque commit/fichier dans un simple dépôt de ‘hash’ de documents,
+    chaque commit finira dans ce dépôt comme une entité séparée
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\subsection{Réécrire l'historique}
+\begin{frame}{Réécrire l'historique}
+  \begin{columns}[T]
+
+    \begin{column}{.5\textwidth}
+     \textsc{Mercurial}
+
+      \begin{itemize}
+        \item{Édition difficile des commits passés or il est plus facile de
+              voir les chgmts en examinant l’histoire par les commits}
+        \item{Mercurial Queus permet d’empiler des pré-commits de sorte à
+              pouvoir les réorganiser jusqu’à votre commit final}
+        \item{Extension  équivalente de “interactive rebase” = “histedit” →
+              append-only → génère un fichier de sauvegarde externe →
+              problèmes: comment analyser les modifications de cette
+              sauvegarde? Pendant combien de temps peut-on sauvegarder les
+              sauvegardes}
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{.5\textwidth}
+      \textsc{Git}
+
+      \begin{itemize}
+        \item{Il est facile de « remonter le temps » pour éditer les commits
+              précédents si nécessaire → les logs de commit Git peuvent devenir
+              des récits soigneusement élaborés (voir Mercurial Queus)}
+        \item{Vous arriverez au moment où vous avez besoin de faire un
+              changement dans votre historique de commits; vous n’aurez
+              vraiment qu’une seule chose à savoir: « interactive rebase »
+              (git rebase -i) → permet de modifier l’histoire de Git comme on
+              veut}
+        \item{Git ne détruit pas les objets ayant une référence, pour arrêter
+              le « garbage collector » de Git et retrouver une sauvegarde →
+              appliquer un tag pour référence future → ce sont des commits sans
+              branches}
+      \end{itemize}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\subsection{Les branches}
+\begin{frame}{Les branches}
+  \begin{columns}[T]
+
+    \begin{column}{.5\textwidth}
+      \textsc{Git}
+
+      \begin{itemize}
+        \item{Namespace du serveur indique clairement qui est qui}
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{.5\textwidth}
+      \textsc{Mercurial}
+
+      \begin{itemize}
+        \item{Extension Bookmark → clone direct des branches Git, au début on
+              pouvait pas faire le push des bookmarks sur le serveur}
+        \item{Problème: les bookmarks partagent le même namespace}
+      \end{itemize}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\subsection{Staging (zone de transit)}
+\begin{frame}{Staging (zone de transit)}
+  \begin{columns}[T]
+
+    \begin{column}{.5\textwidth}
+      \textsc{Git}
+      \begin{itemize}
+        \item{Tout ce qu’on ajoute à un commit passe par cette zone de transit:
+              commande “git add” → appelée aussi index}
+        \item{On ajoute des modifications, pas aux fichiers eux-mêmes,
+              mais au reflog}
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{.5\textwidth}
+      \textsc{Mercurial}
+      \begin{itemize}
+        \item{Extension Record}
+        \item{Doit copier les modifications ‘dans un emplacement temporaire →
+              mettre à jour les fichiers de stockage, commit → enfin annuler
+              les modifications}
+        \item{Erreur = on recommence tout}
+      \end{itemize}
+    \end{column}
+
+  \end{columns}
+\end{frame}

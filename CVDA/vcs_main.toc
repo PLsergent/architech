@@ -5,9 +5,9 @@
 \beamer@subsectionintoc {1}{3}{Git, Mercurial \& Bazaar}{7}{0}{1}
 \beamer@sectionintoc {2}{Décentralisé vs Centralisé}{8}{0}{2}
 \beamer@subsectionintoc {2}{1}{Principe de base d'un VCS}{9}{0}{2}
-\beamer@subsectionintoc {2}{2}{Gestionnaire de versions centralisée CVCS}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Gestionnaire de versions centralisé CVCS}{10}{0}{2}
 \beamer@subsectionintoc {2}{3}{Présentation SVN}{12}{0}{2}
-\beamer@subsectionintoc {2}{4}{Gestionnaire de versions décentralisée DVCS}{13}{0}{2}
+\beamer@subsectionintoc {2}{4}{Gestionnaire de versions décentralisé DVCS}{13}{0}{2}
 \beamer@sectionintoc {3}{Git vs Mercurial}{15}{0}{3}
 \beamer@subsectionintoc {3}{1}{Format du dépôt}{16}{0}{3}
 \beamer@subsectionintoc {3}{2}{Réécrire l'historique}{17}{0}{3}

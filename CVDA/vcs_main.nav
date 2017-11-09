@@ -26,18 +26,18 @@
 \headcommand {\beamer@subsectionentry {0}{2}{1}{9}{Principe de base d'un VCS}}\headcommand {\beamer@subsectionpages {8}{8}}
 \headcommand {\slideentry {2}{1}{1}{9/9}{Principe de base d'un VCS}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{10}{Gestionnaire de versions centralisée CVCS}}\headcommand {\beamer@subsectionpages {9}{9}}
-\headcommand {\slideentry {2}{2}{1}{10/10}{Gestionnaire de versions centralisée CVCS}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{10}{Gestionnaire de versions centralisé CVCS}}\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\slideentry {2}{2}{1}{10/10}{Gestionnaire de versions centralisé CVCS}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {2}{2}{2}{11/11}{Gestionnaire de versions centralisée CVCS}{0}}
+\headcommand {\slideentry {2}{2}{2}{11/11}{Gestionnaire de versions centralisé CVCS}{0}}
 \headcommand {\beamer@framepages {11}{11}}
 \headcommand {\beamer@subsectionentry {0}{2}{3}{12}{Présentation SVN}}\headcommand {\beamer@subsectionpages {10}{11}}
 \headcommand {\slideentry {2}{3}{1}{12/12}{Présentation SVN}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{13}{Gestionnaire de versions décentralisée DVCS}}\headcommand {\beamer@subsectionpages {12}{12}}
-\headcommand {\slideentry {2}{4}{1}{13/13}{Gestionnaire de versions décentralisée DVCS}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{13}{Gestionnaire de versions décentralisé DVCS}}\headcommand {\beamer@subsectionpages {12}{12}}
+\headcommand {\slideentry {2}{4}{1}{13/13}{Gestionnaire de versions décentralisé DVCS}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {2}{4}{2}{14/14}{Gestionnaire de versions décentralisée DVCS}{0}}
+\headcommand {\slideentry {2}{4}{2}{14/14}{Gestionnaire de versions décentralisé DVCS}{0}}
 \headcommand {\beamer@framepages {14}{14}}
 \headcommand {\sectionentry {3}{Git vs Mercurial}{15}{Git vs Mercurial}{0}}
 \headcommand {\beamer@sectionpages {8}{14}}
@@ -56,8 +56,10 @@
 \headcommand {\beamer@subsectionentry {0}{3}{4}{19}{Staging (zone de transit)}}\headcommand {\beamer@subsectionpages {18}{18}}
 \headcommand {\slideentry {3}{4}{1}{19/19}{Staging (zone de transit)}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\beamer@partpages {1}{19}}
-\headcommand {\beamer@subsectionpages {19}{19}}
-\headcommand {\beamer@sectionpages {15}{19}}
-\headcommand {\beamer@documentpages {19}}
-\headcommand {\def \inserttotalframenumber {15}}
+\headcommand {\slideentry {3}{4}{2}{20/20}{Staging (zone de transit)}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@partpages {1}{20}}
+\headcommand {\beamer@subsectionpages {19}{20}}
+\headcommand {\beamer@sectionpages {15}{20}}
+\headcommand {\beamer@documentpages {20}}
+\headcommand {\def \inserttotalframenumber {16}}

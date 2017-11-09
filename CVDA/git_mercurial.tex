@@ -32,13 +32,10 @@
      \textsc{Mercurial}
 
       \begin{itemize}
-        \item{Édition difficile des commits passés 
+        \item{Édition difficile des commits passés}
         \item{Mercurial Queus permet d’empiler des pré-commits de sorte à
               pouvoir les réorganiser jusqu’à votre commit final}
-        \item{“histedit” → append-only → génère un fichier de sauvegarde externe
-              problèmes: comment analyser les modifications de cette
-              sauvegarde? Pendant combien de temps peut-on sauvegarder les
-              sauvegardes}
+        \item{“histedit” → append-only → génère un fichier de sauvegarde externe}
       \end{itemize}
     \end{column}
 
@@ -46,19 +43,12 @@
       \textsc{Git}
 
       \begin{itemize}
-        \item{les logs de commit Git peuvent devenir des récits soigneusement 
-              élaborés }
-              Il est facile de « remonter le temps » pour éditer les commits
-              précédents si nécessaire 
-        \item{Vous arriverez au moment où vous avez besoin de faire un
-              changement dans votre historique de commits; vous n’aurez
-              vraiment qu’une seule chose à savoir: « interactive rebase »
-              (git rebase -i) → permet de modifier l’histoire de Git comme on
-              veut}
+        \item{les logs de commit Git peuvent devenir des récits soigneusement
+              élaborés}
+        \item{« interactive rebase » (git rebase -i) → permet de modifier
+              l’histoire de Git comme on veut}
         \item{Git ne détruit pas les objets ayant une référence, pour arrêter
-              le « garbage collector » de Git et retrouver une sauvegarde →
-              appliquer un tag pour référence future → ce sont des commits sans
-              branches}
+              le « garbage collector » de Git et retrouver une sauvegarde}
       \end{itemize}
     \end{column}
 

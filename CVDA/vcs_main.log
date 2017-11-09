@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2017.10.25)  9 NOV 2017 01:03
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2017.10.19)  9 NOV 2017 08:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1199,16 +1199,79 @@ LaTeX Info: Redefining \- on input line 3831.
 .................................................
 ))
 \c@fontsnotfound=\count335
-
-
-Package beamerthememetropolis Warning: Could not find Fira Sans fonts on input 
-line 95.
-
-
-Package beamerthememetropolis Warning: Could not find Fira Mono fonts on input 
-line 95.
-
-)) (./vcs_main.aux (./histoire.aux) (./dvcs_cvcs.aux) (./git_mercurial.aux))
+\g__fontspec_family_FiraSansLight_int=\count336
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FiraSansLight(0)' created for font 'Fira Sans Light' with
+. options [Ligatures=TeX,ItalicFont={Fira Sans Light Italic},BoldFont={Fira
+. Sans},BoldItalicFont={Fira Sans Italic}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"Fira Sans
+. Light/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: <->"Fira Sans
+. Light/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'bold' (bx/n) with NFSS spec.: <->"Fira
+. Sans/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: <->"Fira
+. Sans/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'italic' (m/it) with NFSS spec.: <->"Fira Sans Light
+. Italic/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: <->"Fira Sans Light
+. Italic/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'bold italic' (bx/it) with NFSS spec.: <->"Fira Sans
+. Italic/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: <->"Fira Sans
+. Italic/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+.................................................
+LaTeX Info: Redefining \sffamily on input line 95.
+\g__fontspec_family_FiraMono_int=\count337
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "Fira Mono Medium/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "Fira Mono/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FiraMono(0)' created for font 'Fira Mono' with options
+. [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=WordSpace,BoldFont={Fira
+. Mono Medium}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"Fira
+. Mono/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \hyphenchar \font =-1\relax 
+. - 'bold' (bx/n) with NFSS spec.: <->"Fira Mono
+. Medium/OT:script=latn;language=DFLT;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \hyphenchar \font =-1\relax 
+. - 'bold italic' (bx/it) with NFSS spec.: <->"Fira
+. Mono/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \hyphenchar \font =-1\relax 
+.................................................
+LaTeX Info: Redefining \ttfamily on input line 95.
+)) (./vcs_main.aux
+(./histoire.aux) (./dvcs_cvcs.aux) (./git_mercurial.aux))
 \openout1 = `vcs_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -1274,7 +1337,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count336
+\c@section@level=\count338
 )
 LaTeX Info: Redefining \ref on input line 12.
 LaTeX Info: Redefining \pageref on input line 12.
@@ -1294,38 +1357,50 @@ LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 12.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmss/bx/n on input line 12.
+(Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/bx/n on input line
+ 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmss/bx/n on input line 12.
+(Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/bx/n on input line
+ 12.
 LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 12.
+(Font)                  OT1/cmss/m/n --> TU/FiraSansLight(0)/m/n on input line 
+12.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 12.
+(Font)                  OT1/cmss/bx/n --> TU/FiraSansLight(0)/m/n on input line
+ 12.
 LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmss/m/it on input line 12.
+(Font)                  OT1/cmr/m/it --> TU/FiraSansLight(0)/m/it on input line
+ 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmss/m/it on input line 12.
+(Font)                  OT1/cmr/bx/it --> TU/FiraSansLight(0)/m/it on input lin
+e 12.
 LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 12.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 12.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 12.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 12.
+(Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/bx/n on
+ input line 12.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 12.
+(Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/bx/it 
+on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmr/bx/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 12.
+(Font)                  TU/FiraSansLight(0)/bx/n --> TU/FiraSansLight(0)/bx/n o
+n input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 12.
+(Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/bx/n on
+ input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 12.
+(Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/bx/it 
+on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 12.
+(Font)                  TU/FiraMono(0)/m/n --> TU/FiraMono(0)/bx/n on input lin
+e 12.
 
 (/usr/share/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dicti
 onary/translator-basic-dictionary-English.dict
@@ -1376,12 +1451,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1.
- [4
+) [4
 
 
 ]
@@ -1427,7 +1497,7 @@ File: ./CVCS.png Graphic file (type bmp)
 File: ./svn1.png Graphic file (type bmp)
 <./svn1.png>
 
-Overfull \vbox (22.01938pt too high) detected at line 58
+Overfull \vbox (25.30984pt too high) detected at line 58
  []
 
 [12
@@ -1436,7 +1506,7 @@ Overfull \vbox (22.01938pt too high) detected at line 58
 File: ./DVCS.png Graphic file (type bmp)
 <./DVCS.png>
 
-Overfull \vbox (0.47232pt too high) detected at line 76
+Overfull \vbox (2.77728pt too high) detected at line 76
  []
 
 [13
@@ -1450,15 +1520,10 @@ Overfull \vbox (0.47232pt too high) detected at line 76
 
 
 
-]
-
-LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 25.
-
-[16
+] [16
 
 ]
-Overfull \vbox (219.34575pt too high) detected at line 67
+Overfull \vbox (20.35747pt too high) detected at line 56
  []
 
 [17
@@ -1485,12 +1550,12 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 27.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 27.
  ) 
 Here is how much of TeX's memory you used:
- 33936 strings out of 492998
- 684027 string characters out of 6139960
- 760616 words of memory out of 5000000
- 37325 multiletter control sequences out of 15000+600000
- 538183 words of font info for 58 fonts, out of 8000000 for 9000
+ 34002 strings out of 492998
+ 686477 string characters out of 6139960
+ 760012 words of memory out of 5000000
+ 37365 multiletter control sequences out of 15000+600000
+ 538303 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 71i,13n,83p,10397b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,13n,95p,10397b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on vcs_main.pdf (19 pages).

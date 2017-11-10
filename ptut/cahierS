@@ -12,19 +12,18 @@ Note : ne pas parler de la présentation orale dans le cahier des charges (menti
 Sommaire :
 
 I) Présentation membres du groupe
-	- Qualification
+	- Qualification et intérêts
 	- Motivation
 	- Hiérarchisation (Bruno chief)
 
 II) Présentation projet, public destiné, buts
 	- pourquoi ?
 	- pourquoi en open source 
-	- outil, présentation des librairies
 	- architecture linux, distribution
 	- principe de la librairie facial_recognition
 
 III) Stratégie développement 
- 	- modèle de dev en V
+ 	- modèle de dev incrémental
 		- URS, SRS, SDS
 		- SRS > Continious integration, URS > Scénario de test
 		- schéma
@@ -32,6 +31,8 @@ III) Stratégie développement
 	- politique de dev : agile
 	- présentation public 
 		- rédaction d'un README
+	- outil, présentation des librairies
+
 
 IV) Phases du projet, distribution des tâches
 	- diagramme de Gant

@@ -11,18 +11,18 @@ Note : ne pas parler de la présentation orale dans le cahier des charges (menti
 
 Sommaire :
 
-I) Présentation membres du groupe
+I) Présentation membres du groupe (David & Matthieu & PL)
 	- Qualification et intérêts
 	- Motivation
 	- Hiérarchisation (Bruno chief)
 
-II) Présentation projet, public destiné, buts
+II) Présentation projet, public destiné, buts(David & Matthieu & PL)
 	- pourquoi ?
 	- pourquoi en open source 
 	- architecture linux, distribution
 	- principe de la librairie facial_recognition
 
-III) Stratégie développement 
+III) Stratégie développement(Bruno & Sagar)
  	- modèle de dev incrémental
 		- URS, SRS, SDS
 		- SRS > Continious integration, URS > Scénario de test
@@ -34,21 +34,21 @@ III) Stratégie développement
 	- outil, présentation des librairies
 
 
-IV) Phases du projet, distribution des tâches
+IV) Phases du projet, distribution des tâches(Sagar & PL)
 	- diagramme de Gant
 	- planning
 	- (auto)formation
 	
-V) URS (User Requirement Specifications)
+V) URS (User Requirement Specifications)(PL & David)
 	- ce doit POUVOIR faire le software
 
-VI) SRS (Software Requirement Specifications)
-	- comment on matérialise les URS en terme de fonction
+#VI) SRS (Software Requirement Specifications)
+#	- comment on matérialise les URS en terme de fonction
 
-VII) SDS (Software Design  Specifications)
+VII) SDS (Software Design  Specifications)(PL & David)
 	- code / exemple option / écrans, enchainements écrans
 
-VIII) Implémentation système
+VIII) Implémentation système(Bruno & David)
 	- IQ (Installation Qualification)
 	- explication générale :
 		- accès système : verrouillage, déverrouillage (acpi)

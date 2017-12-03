@@ -11,7 +11,7 @@ SOMMAIRE
 	-desinstellation
 	-Documentation courte et/ou page pointant vers documentation longue (ou page d'exemple)Méthode de rapport de bug, contribution
 	-Licence et copyright
-	-Auteur et contact 
+	-Auteur et contact
 
 Description
 ============
@@ -28,15 +28,15 @@ Installation, configuration et system requis
 Comment l'installer ?
 
 Pendant l'installation, il ya 3 etape à passer:
--Recherche : pour cette option, les utilisateurs doivent simplement sélectionner une image de reference. 
-	LOCKATME peut acceder sur votre compte Facebook afin de vous proposer des images de references adequates. 
+-Recherche : pour cette option, les utilisateurs doivent simplement sélectionner une image de reference.
+	LOCKATME peut acceder sur votre compte Facebook afin de vous proposer des images de references adequates.
 	Il est aussi possible de faire face à votre webcam et LOCKATME se charge du reste.
--Comparaison : tout ce que l'on doit faire c'est choisir le visage à rechercher. 
-	Une fois cette étape franchie, LOCKATME va directement comparer les images et trouver tous les visages	
+-Comparaison : tout ce que l'on doit faire c'est choisir le visage à rechercher.
+	Une fois cette étape franchie, LOCKATME va directement comparer les images et trouver tous les visages
 	correspondants à l'image de reference.
 -Détection de visage : la détection se fait selon la couleur, la taille et la forme du visage à rechercher.
 	L'orientation et la pose (profil ou face) ainsi que les expressions faciales entrent en jeu lors de l'identification.
- 	
+
 comment congiguirer LOCKATME?
 
 ????????????????????????????????????????????
@@ -55,9 +55,9 @@ Mode d'utilisation
 
 desinstellation
 ================
- 
+
  ???????????????????????????????
- 
+
 Documentation
 ==============
 
@@ -102,7 +102,7 @@ Bruno inec ==5 chef de projet
 Pierre Louis sergent
 David Anandaradja
 Sagar Gueye
-Mathieu krisleger 
+Mathieu krisleger
 Tuteur: Mr Vidal
 
 contact

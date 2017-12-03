@@ -1,0 +1,109 @@
+LOCKATME
+**************************
+version 1.0.0 - 20/06/2018
+
+SOMMAIRE
+=========
+
+	-Description
+	-Installation, configuration et system requis
+	-Mode d'utilisation
+	-desinstellation
+	-Documentation courte et/ou page pointant vers documentation longue (ou page d'exemple)Méthode de rapport de bug, contribution
+	-Licence et copyright
+	-Auteur et contact 
+
+Description
+============
+
+C'est quoi LOCKATME?
+
+LOCKATME est un logiciel qui se base sur la reconnaissance faciale pour verouiller/deverouiller votre pc.
+Afin de reconnaitre la personne qui est en face du pc,
+le logiciel détecte et compare le visage avec l'image de reference qui a été choisi lors de l'installation.
+
+Installation, configuration et system requis
+=============================================
+
+Comment l'installer ?
+
+Pendant l'installation, il ya 3 etape à passer:
+-Recherche : pour cette option, les utilisateurs doivent simplement sélectionner une image de reference. 
+	LOCKATME peut acceder sur votre compte Facebook afin de vous proposer des images de references adequates. 
+	Il est aussi possible de faire face à votre webcam et LOCKATME se charge du reste.
+-Comparaison : tout ce que l'on doit faire c'est choisir le visage à rechercher. 
+	Une fois cette étape franchie, LOCKATME va directement comparer les images et trouver tous les visages	
+	correspondants à l'image de reference.
+-Détection de visage : la détection se fait selon la couleur, la taille et la forme du visage à rechercher.
+	L'orientation et la pose (profil ou face) ainsi que les expressions faciales entrent en jeu lors de l'identification.
+ 	
+comment congiguirer LOCKATME?
+
+????????????????????????????????????????????
+
+Quels sont les systemes requis?
+
+Avant d'installer LOCKATME, il est important de vérifier que votre ordinateur respecte ou dépasse les exigences minimales requises.
+Si votre système ne respecte pas ces exigences minimales, des problèmes risquent de survenir lors de l'exécution du produit,
+ainsi qu'au niveau du système d'exploitation.
+?????????????????????????????
+
+Mode d'utilisation
+===================
+
+???????????????????????????????
+
+desinstellation
+================
+ 
+ ???????????????????????????????
+ 
+Documentation
+==============
+
+https://github.com/Sweenu/lockatme
+
+
+Licence et copyright
+======================
+
+MIT Licence
+
+Copyright (c) 2017 Bruno Inec
+
+L'autorisation est accordée, sans frais, à toute personne qui en obtient une copie
+de ce logiciel et des fichiers de documentation associés (le «Logiciel»), pour traiter
+dans le Logiciel sans restriction, y compris, sans limitation, les droits
+utiliser, copier, modifier, fusionner, publier, distribuer, sous-licencier et / ou vendre
+copies du Logiciel et permettre aux personnes auxquelles le Logiciel est
+fourni à cette fin, sous réserve des conditions suivantes:
+
+L'avis de copyright ci-dessus et cet avis d'autorisation doivent être inclus dans
+des copies ou des portions substantielles du logiciel.
+
+le logiciel est fourni "tel quel", sans garantie d'aucune sorte, expresse ou
+implicite, y compris, mais sans s'y limiter, les garanties de qualité marchande,
+aptitude à un usage particulier et non-infraction. en aucun cas, le
+les auteurs ou les détenteurs de copyright sont responsables de toute réclamation, dommage ou autre
+responsabilité, que ce soit dans une action de contrat, délictuelle ou autre, découlant de,
+out ou en relation avec le logiciel ou l'utilisation ou autres transactions
+logiciel.
+
+Auteur et contact
+==================
+
+Dans le cadre d'un projet tuteuré, l'idée nous est venue d'un membre du groupe qui est d'ailleurs le chef de projet.
+Encadrer par un professeur qui s'y connaisse bien en developpement de logiel, nous avons commencé à ecrire des bouts de code.
+On testait ces codes avant de les PUSHER sur git up qui nous permettait de décentraliser le travail.
+Après deux semestres de dur labeur, nous sommes arrivés à terme et LOCKATME etait prête à être utilisé.
+
+les membres du groupe:
+Bruno inec ==5 chef de projet
+Pierre Louis sergent
+David Anandaradja
+Sagar Gueye
+Mathieu krisleger 
+Tuteur: Mr Vidal
+
+contact
+xxxxxxxxx@etu.univ-lyon1.fr

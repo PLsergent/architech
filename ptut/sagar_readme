@@ -18,8 +18,8 @@ Description
 
 C'est quoi LOCKATME?
 
-LOCKATME est un logiciel qui se base sur la reconnaissance faciale pour verouiller/deverouiller votre pc.
-Afin de reconnaitre la personne qui est en face du pc,
+LOCKATME est un logiciel qui se base sur la reconnaissance faciale pour verrouiller/déverrouiller votre pc.
+Afin de reconnaître la personne qui est en face du pc,
 le logiciel détecte et compare le visage avec l'image de reference qui a été choisi lors de l'installation.
 
 Installation, configuration et system requis
@@ -37,7 +37,7 @@ Pendant l'installation, il ya 3 etape à passer:
 -Détection de visage : la détection se fait selon la couleur, la taille et la forme du visage à rechercher.
 	L'orientation et la pose (profil ou face) ainsi que les expressions faciales entrent en jeu lors de l'identification.
 
-comment congiguirer LOCKATME?
+comment configurer LOCKATME?
 
 ????????????????????????????????????????????
 
@@ -53,7 +53,7 @@ Mode d'utilisation
 
 ???????????????????????????????
 
-desinstellation
+désinstallation
 ================
 
  ???????????????????????????????
@@ -94,15 +94,15 @@ Auteur et contact
 
 Dans le cadre d'un projet tuteuré, l'idée nous est venue d'un membre du groupe qui est d'ailleurs le chef de projet.
 Encadrer par un professeur qui s'y connaisse bien en developpement de logiel, nous avons commencé à ecrire des bouts de code.
-On testait ces codes avant de les PUSHER sur git up qui nous permettait de décentraliser le travail.
-Après deux semestres de dur labeur, nous sommes arrivés à terme et LOCKATME etait prête à être utilisé.
+##On testait ces codes avant de les PUSHER sur git up qui nous permettait de décentraliser le travail.
+##Après deux semestres de dur labeur, nous sommes arrivés à terme et LOCKATME etait prête à être utilisé.
 
 les membres du groupe:
-Bruno inec ==5 chef de projet
-Pierre Louis sergent
-David Anandaradja
+Bruno Inec == chef de projet
+Pierre Louis Sergent
+David Anandanadaradja
 Sagar Gueye
-Mathieu krisleger
+Matthieu Kirschleger
 Tuteur: Mr Vidal
 
 contact

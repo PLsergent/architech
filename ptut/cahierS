@@ -42,13 +42,14 @@ IV) Phases du projet, distribution des tâches(Sagar & PL)
 V) URS (User Requirement Specifications)(PL & David)
 	- ce doit POUVOIR faire le software
 
-#VI) SRS (Software Requirement Specifications)
-#	- comment on matérialise les URS en terme de fonction
+VI) SDS (Software Design  Specifications)(PL & David)
+	- maquettes, écrans, utilisation
+	- diagramme
+	- config
+	- bibli utilisés(explication open_cv et facial_recognition)
+	- exemple algo
 
-VII) SDS (Software Design  Specifications)(PL & David)
-	- code / exemple option / écrans, enchainements écrans
-
-VIII) Implémentation système(Bruno & David)
+VII) Implémentation système(Bruno & David)
 	- IQ (Installation Qualification)
 	- explication générale :
 		- accès système : verrouillage, déverrouillage (acpi)

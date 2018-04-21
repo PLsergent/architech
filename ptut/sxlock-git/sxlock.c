@@ -218,7 +218,7 @@ main_loop(Window w, GC gc, XFontStruct* font, WindowPositionInfo* info, char pas
 
             char inputChar = 0;
             XLookupString(&event.xkey, &inputChar, sizeof(inputChar), &ksym, 0);
-
+//-------------------Changements réalisés-----------------------------------
             int ret;
             switch (ksym) {
                 case XK_Return:
@@ -269,7 +269,7 @@ main_loop(Window w, GC gc, XFontStruct* font, WindowPositionInfo* info, char pas
         }
     }
 }
-
+//------------------------------------------------------------------------
 Bool
 parse_options(int argc, char** argv)
 {

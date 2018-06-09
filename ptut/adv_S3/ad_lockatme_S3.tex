@@ -51,9 +51,8 @@
   \section{PAM: Pluggable Authentication Modules} \emph{(Bruno, David,
   Pierre-Louis, travail en parallèle de Python into C)}\\ \\
 En nous penchant sur des applications de lock sous Linux, tel que i3lock,
-lightDM, nous nous sommes rendus compte qu’elles utilisent toute le module
-PAM.
-Le module PAM permet à travers de configs files contenant des modules de
+lightDM, nous nous sommes rendus compte qu’elles utilisent toute PAM.
+Ce dernier permet à travers de configs files, contenant des modules, de
 gérer l’authentification. Les applications font appels à PAM en passant en
 paramètre le nom de la config file, qui elle même contient des modules
 d’authentification.
@@ -64,8 +63,8 @@ d’authentification.
     \caption{schéma explication PAM}
   \end{center}
   \end{figure}
-
-  Nous nous sommes donc réparti les recherches à partir de la en trois parties
+\newpage
+  Nous nous sommes donc répartis les recherches à partir de la en trois parties
   (issues de la documentation officielle):
   \begin{itemize}
     \item{The System Administrators' Guide (Pierre-Louis)}
@@ -75,7 +74,7 @@ d’authentification.
 Cette partie concerne les PAM config file contenues dans le répertoire
 \verb|/etc/pam.d|. Elles contiennent les modules PAM qui seront utilisés suite à
 l’appel de PAM par l’application. Il s’agit d’une syntaxe particulière où les
-modules sont regroupés en "type groupe" : account, auth, password et session.
+modules sont regroupés en "type group" : account, auth, password et session.
 Après les types groups, sur la même ligne, vient la "control value", qui va
 définir le comportement de l’application en fonction des valeurs de retour des
 modules. Par exemple: required, sufficient, include, optional… Après la control

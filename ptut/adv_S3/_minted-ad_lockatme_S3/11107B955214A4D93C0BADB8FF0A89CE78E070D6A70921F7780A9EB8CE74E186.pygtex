@@ -1,0 +1,36 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}Python.h\PYGZgt{}}
+
+\PYG{k+kt}{int} \PYG{n+nf}{main} \PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// PyObject est un wrapper Python autour des objets qu\PYGZsq{}on}
+    \PYG{c+c1}{// va échanger entre le C et Python.}
+    \PYG{n}{PyObject} \PYG{o}{*}\PYG{n}{retour}\PYG{p}{,} \PYG{o}{*}\PYG{n}{module}\PYG{p}{,} \PYG{o}{*}\PYG{n}{fonction}\PYG{p}{,} \PYG{o}{*}\PYG{n}{arguments}\PYG{p}{;}
+    \PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{resultat}\PYG{p}{;}
+
+    \PYG{c+c1}{// Initialisation de l\PYGZsq{}interpréteur. A cause du GIL, on ne peut}
+    \PYG{c+c1}{// avoir qu\PYGZsq{}une instance de celui\PYGZhy{}ci à la fois.}
+    \PYG{n}{Py\PYGZus{}Initialize}\PYG{p}{();}
+
+    \PYG{c+c1}{// Import du script.}
+    \PYG{n}{PySys\PYGZus{}SetPath}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}.\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{module} \PYG{o}{=} \PYG{n}{PyImport\PYGZus{}ImportModule}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}biblio\PYGZdq{}}\PYG{p}{);}
+
+    \PYG{c+c1}{// Récupération de la fonction}
+    \PYG{n}{fonction} \PYG{o}{=} \PYG{n}{PyObject\PYGZus{}GetAttrString}\PYG{p}{(}\PYG{n}{module}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}yolo\PYGZdq{}}\PYG{p}{);}
+
+    \PYG{c+c1}{// Création d\PYGZsq{}un PyObject de type string. Py\PYGZus{}BuildValue peut créer}
+    \PYG{c+c1}{// tous les types de base Python.}
+    \PYG{n}{arguments} \PYG{o}{=} \PYG{n}{Py\PYGZus{}BuildValue}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}(s)\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Leroy Jenkins\PYGZdq{}}\PYG{p}{);}
+    \PYG{c+c1}{// Appel de la fonction.}
+    \PYG{n}{retour} \PYG{o}{=} \PYG{n}{PyEval\PYGZus{}CallObject}\PYG{p}{(}\PYG{n}{fonction}\PYG{p}{,} \PYG{n}{arguments}\PYG{p}{);}
+
+    \PYG{c+c1}{// Conversion du PyObject obtenu en string C}
+    \PYG{n}{PyArg\PYGZus{}Parse}\PYG{p}{(}\PYG{n}{retour}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}s\PYGZdq{}}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{resultat}\PYG{p}{);}
+
+    \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Resultat: \PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{resultat}\PYG{p}{);}
+
+    \PYG{c+c1}{// On ferme cet interpréteur.}
+    \PYG{n}{Py\PYGZus{}Finalize}\PYG{p}{();}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

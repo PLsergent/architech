@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.3.7)  10 JUN 2018 00:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.3.7)  10 JUN 2018 20:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -912,10 +912,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--59
 
  []
 
-<./pam.jpg, id=13, 352.6776pt x 220.4235pt>
-File: ./pam.jpg Graphic file (type jpg)
-<use ./pam.jpg>
-Package pdftex.def Info: ./pam.jpg  used on input line 62.
+<pam.jpg, id=13, 352.6776pt x 220.4235pt>
+File: pam.jpg Graphic file (type jpg)
+<use pam.jpg>
+Package pdftex.def Info: pam.jpg  used on input line 62.
 (pdftex.def)             Requested size: 346.89731pt x 216.82076pt.
 [2 <./pam.jpg>]
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 70.
@@ -1004,7 +1004,7 @@ runsystem(rm ad_lockatme_S3.pyg)...executed.
  ) 
 Here is how much of TeX's memory you used:
  7644 strings out of 492982
- 122895 string characters out of 6138580
+ 122887 string characters out of 6138580
  242219 words of memory out of 5000000
  11079 multiletter control sequences out of 15000+600000
  5869 words of font info for 22 fonts, out of 8000000 for 9000
@@ -1018,7 +1018,7 @@ c/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/cm-super/sfrm1000.pfb>
-Output written on ad_lockatme_S3.pdf (9 pages, 145699 bytes).
+Output written on ad_lockatme_S3.pdf (9 pages, 145729 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream

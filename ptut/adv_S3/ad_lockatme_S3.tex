@@ -59,7 +59,7 @@ d’authentification.
 
   \begin{figure}[h]
     \begin{center}
-    \includegraphics[width=0.8\linewidth]{./pam}
+    \includegraphics[width=0.8\linewidth]{pam}
     \caption{schéma explication PAM}
   \end{center}
   \end{figure}
@@ -225,16 +225,16 @@ int main(int argc, char *argv[]) {
   guise d’authentification.
 \\ \\
   Suite à des recherches nous trouvons un module déjà écrit en C:
-  \texttt{pam\_authentication}. Ce module très bien fait possède une interface
-  graphique pour "entraîner" le programme avec des visages capturés avec la webcam. Nous
-  utilisons donc ce module pour des programmes simples qui, une fois lancé
-  demande une reconnaissance faciale, et en cas d’échec demande un mot de
-  passe. Ensuite nous avons pu modifier un locker déjà existant, en
-  implémentant deux \texttt{pam\_start} différent, chacun se lançant
-  indépendamment en fonction du choix de l’utilisateur: reconnaissance faciale
-  ou mot de passe. Nous avions donc un locker fonctionnel, qui laisse le choix à
-  l’utilisateur de déverrouiller par reconnaissance faciale ou par mot de
-  passe.
+\texttt{pam\_authentication}. Ce module très bien fait possède une interface
+graphique pour "entraîner" le programme avec des visages capturés avec la
+webcam. Nous utilisons donc ce module pour des programmes simples qui simulent un
+verrouillage dans la CLI,  une fois lancé il demandent une reconnaissance faciale,
+et en cas d’échec demandent un mot de passe. Ensuite nous avons pu modifier un
+locker déjà existant, en implémentant deux \texttt{pam\_start} différent,
+chacun se lançant indépendamment en fonction du choix de l’utilisateur:
+reconnaissance faciale ou mot de passe. Nous avions donc un locker fonctionnel,
+qui laisse le choix à l’utilisateur de déverrouiller par reconnaissance faciale
+ou par mot de passe.
 
   \section{Problèmes}
 

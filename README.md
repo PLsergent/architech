@@ -1,4 +1,4 @@
-# Initial page
+# ArchItech
 
 ## Getting Super Powers
 

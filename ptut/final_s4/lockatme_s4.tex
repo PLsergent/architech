@@ -1,0 +1,317 @@
+\documentclass[french]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,total={5.8in, 9in}]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{hyphenat}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{listings}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[skins]{tcolorbox}
+\graphicspath{{img/}}
+
+\title{Lockatme\\A screen lock with facial recognition abilities\\Final report}
+\date{\today}
+\author{David Anandanadaradja, Sagar Gueye, Bruno Inec,\\ Matthieu Kirschleger,
+Pierre-Louis Sergent}
+
+\begin{document}
+    \maketitle
+
+    \tableofcontents
+
+\chapter{Antériorité}
+\newpage
+
+\section{Présentation des membres du groupe}
+
+\subsection{Contexte}
+Dans le cadre de notre DUT Informatique à l’IUT Lyon 1, nous sommes tenus de
+réaliser un projet tuteuré durant le second semestre. Ce projet s’étendant
+également sur le troisième semestre, il a pour but de répondre à une
+problématique précise et de mettre en oeuvre les compétences acquises au cours
+de la formation. Il a aussi vocation à faire découvrir de nouveaux domaines et
+il nous permettra d’élargir nos savoirs à travers une auto-formation.
+
+\vspace{0.5cm}
+Ce projet se découpe en deux axes :
+\begin{itemize}
+  \item{Rédaction du cahier des charges (second semestre)}
+  \item{Réalisation du projet en lui même (troisième semestre)}
+\end{itemize}
+\vspace{0.5cm}
+
+Malgré une liste de sujets proposés, notre groupe a voulu suivre ses propres
+motivations (présentées plus loin dans ce document) et a choisi de proposer un
+sujet à M. Vidal. L’intitulé est le suivant : Verrouillage et déverrouillage
+d’écran par reconnaissance faciale sous Linux.
+
+\subsection{Organisation et membres}
+L’équipe chargée de ce projet est constituée
+\begin{itemize}
+  \item{Tuteur du projet : M. Vincent VIDAL}
+  \item{Chef du projet : M. Bruno INEC}
+  \item{Membres : M. David ANANDANADARADJA, Mme Sagar GUEYE, M. Matthieu
+        KIRSCHLEGER et M. Pierre-Louis SERGENT}
+\end{itemize}
+
+\subsection{Compétences}
+Notre projet comporte deux contraintes principales : il nécessite une bonne
+connaissance du langage Python et une
+maîtrise de Linux. L’impulsion de ces choix vient en grande partie du chef de
+projet qui possède une expérience importante dans ces deux domaines. David et
+Pierre-Louis possèdent quant à eux une expérience modérée dans l’utilisation de
+Linux (distribution Arch). L’ensemble des compétences individuelles est résumé
+ci-après :
+\\
+
+\textbf{Python} :
+\begin{itemize}
+  \item{Confirmé : Bruno INEC}
+  \item{Intermédiaire : Pierre-Louis SERGENT}
+  \item{Débutant : Sagar GUEYE, Matthieu KIRSCHLEGER, David ANANDA}
+\end{itemize}
+
+\textbf{Linux} :
+\begin{itemize}
+  \item{Confirmé : Bruno INEC}
+  \item{Intermédiaire : David ANANDA, Pierre-Louis SERGENT}
+  \item{Débutant : Sagar GUEYE, Matthieu KIRSCHLEGER}
+\end{itemize}
+
+\vspace{0.5cm}
+
+Comme le montre le listing précédent, les compétences du groupe sont très
+disparates. Cela peut apparaître comme une contrainte, mais en réalité cela
+constitue une véritable opportunité pour tous les membres. Ils vont ainsi
+pouvoir se former dans les domaines ci-après. Ils sont essentiels pour la
+suite des études et pour le milieu professionnel.
+
+\vspace{0.5cm}
+\begin{itemize}
+  \item{Programmation : Linux, Python}
+  \item{Rédaction cahier des charges : \LaTeX}
+  \item{Travail en équipe : réunion, communication, CI, modèle de
+  développement}
+\end{itemize}
+\vspace{0.5cm}
+
+Nous étions donc motivés pour nous lancer dans un sujet avec nombre d’inconnus
+mais qui allait être fort enrichissant.
+
+
+\section{Présentation du projet}
+
+\subsection{Buts}
+Le but premier de l’application est de déverrouiller un écran d’ordinateur, à
+l’aide d’une caméra, par reconnaissance faciale. Cependant cela implique de
+mettre en place un verrouillage d’écran sous Linux. Les URS spécifiques seront
+décrit plus tard dans ce document.
+
+\subsection{Motivations}
+Trois membres du groupe utilisent Arch Linux qui est une distribution minimale
+de Linux. Le fait de quitter Windows leur a permis de pleinement se concentrer
+sur la machine à un plus bas niveau, avec tous les avantages de liberté
+qu’offre une plateforme open source, mais aussi toutes les contraintes qui sont
+très formatrices et qui forcent à se pencher d’avantage sur le fonctionnement
+de ce système d’exploitation. Les trois utilisateurs cherchaient une manière de
+verrouiller/déverrouiller leur écran de manière sécurisée. Et l’idée de ce
+projet a fleuri suite à un article présent dans le magazine Linux
+Magazine/France n{\degree}203 : “Mettez en place un système de reconnaissance faciale”.
+
+\subsection{Linux}
+Le développement du logiciel se fera sur Linux. Un tel projet
+sur Windows aurait été bien plus difficile concernant l’implémentation système
+mais aussi le code de l’application. De plus, l’OS est largement privilégié par
+les développeurs dans le monde de la programmation. C’est pourquoi nous avons
+choisi de réaliser notre projet sous Linux, qui s’adressera donc à un public
+famillié avec la CLI (Command Line Interface) et les autres aspects techniques.
+Des interfaces seront potentiellement développées à terme pour les utilisateurs
+de distributions plus user-friendly (comme Ubuntu).
+
+\subsection{Open Source}
+Le développement du projet se fera de manière complètement transparente et donc
+en open source. Ce choix est assez logique lorsque l’on réalise un programme
+pour Linux, car il s’inscrit exactement dans la politique des développeurs qui
+ont réalisé ce dernier. Cela possède de nombreux avantages : possibilité pour
+la communauté de contribuer au projet au travers de modifications du code,
+commentaires, rapport de bug, \ldots
+
+\chapter{Stratégie de développement}
+
+\newpage
+
+\section{Méthodologie voulue}
+Lors de la réalisation du cahier des charges, nous avions réfléchi à la mise en
+place d'une méthodologie agile: SCRUM, afin de conserver une bonne visibilité sur le
+projet. Ainsi nous souhaitions réaliser des cycles; un cycle correspondant au
+lapse de temps entre deux réunions avec le tuteur; pour que ce dernier soit au
+maximum impliqué dans le projet et puisse nous aiguiller en cas de problème.
+\\
+\\
+La méthodologie SCRUM implique également une intégration continue pour faire
+paraître à la fin de chaque cycle une nouvelle version. Pour cela l'idée était
+d'utiliser un service de décentralisation basé sur Git (GitHub), pour pouvoir merged les
+différentes branches dans la branche master.
+
+\section{Application réelle au projet}
+La réalisation du projet en lui même à nécessité de longues heures de recherches
+individuelles, notamment pour lire de la documentation et faire des "boûts" de
+code afin de mieux cerner ce que nous allions faire. C'est pourquoi la phase de développement à
+été plus courte que prévue.
+\\
+\\
+Malgré cela nous avons réalisé de manière régulières des \emph{stand-ups} pour
+répartir les recherches et pour parler de nos avancements et de nos problèmes.
+Lorsque nous avions
+plus de temps (période de vacances), il nous arrivait aussi de travailler
+quotidiennement en open-space en équipe de 2-3 personnes pour permettre un
+retour plus rapide sur le travail effectué et une mise en commun.
+\\
+\\
+Pour ce qui est de la méthode SCRUM, nous avons mis en place des sprints de une
+à deux semaines. À la fin de ces derniers nous nous retrouvions, à
+l'occasion des stand-ups, afin de fermer les tickets résolus et d’ouvrir de
+nouveaux tickets pour le sprint d’après. Les outils qui nous ont servi
+pour exploiter le potentiel de cette méthodologie
+sont \emph{Taiga} pour le suivi et la gestion des tickets et \emph{Discord}
+pour la communication par message ou vidéo.
+\\
+\\
+L'intégration continue a aussi été plus ou moins mise en place. Nous avons bien
+utilisé GitHub pour la mise en commun du travail. Chacun travaillant sur sa
+branche. Cependant, de beaucoup de recherche résultait assez peu de code. Il
+était donc difficile de séparer les tâches sur plusieurs branches pour ensuite
+merge sur master. La plupart du temps c'etait donc le chef du projet qui
+implémentait les features, en se basant sur les recherches de tout le monde.
+
+\chapter{Phase du projet – distribution des tâches}
+
+\newpage
+
+\section{Rétrospective - diagramme de Gantt specification}
+Voici ci dessous le diagramme de Gantt que nous avions réalisé lors du cahier
+des charges pour le S2:
+
+\begin{figure}[h]\label{fig:gantt.png}
+  \includegraphics[width=\linewidth]{Gantt}
+  \caption{diagramme de Gantt}
+  \label{fig:gantt.png}
+\end{figure}
+
+Etant donnée que le sujet était très complexe et comportait de nombreuses zones
+d'ombres, nous avions fait un diagramme de Gantt, approximatif, quant à la durée
+des différentes tâches, ainsi qu'à leurs enchainements. Nous allons voir dans
+la partie qui suit que ce diagramme n'a pas été respecté. Des tâches ont été
+largement sous-estimé, notamment à cause de l'aspect technique de certains
+éléments qui ont été bloquant. Certaines tâches ont été supprimé ou requalifié.
+Suite à nos recherches nous avons changé de stratégie de développement plusieurs
+fois, il y a donc eu un changement dans les technologies utilisées ainsi que dans les
+moyens pour arriver à nos fins.
+\\
+Il existe cependant une certaine ressemblance, concernant les grandes parties,
+entre l'ancien diagramme et le déroulement réel. A savoir :
+
+\vspace{0.5cm}
+\begin{itemize}
+  \item{\textbf{Recherche sur l'algorithme pour la reconnaissance faciale}}
+  \item{\textbf{Verrouillage et déverrouillage de l'écran, implémentation système}}
+  \item{\textbf{Upload pip, amélioration, test}}
+\end{itemize}
+\vspace{0.5cm}
+
+\section{Répartition réalisée}
+
+\subsection{Difficultés rencontrées}
+Comme dit auparavant, de nombreuses difficulté ont été rencontré plus tôt que prévu.
+Voici une liste exhaustive de celles-ci :
+
+\vspace{0.5cm}
+\begin{itemize}
+  \item{\textbf{Répartition des recherches}}\\
+Le sujet abordé était très technique et précis, il nécessitait donc beaucoup de
+recherche. Mais la répartition était plutôt compliqué étant donnée que idéalement
+il aurait fallu que tout le monde possède une connaissance globale des technologies,
+qui pouvait théoriquement nous servir pour le développement.\\
+
+  \item{\textbf{Exploitation des recherches, mise en commun}}\\
+Par la suite, les nombreuses heures de recherches ne nous avançaient guère pour la
+réalisation de notre projet. Il était difficile d'avoir une vision sur le long
+terme, quand nous stagnions parfois plusieurs jours sur un aspect compliqué. Il
+n'était pas évident de savoir concrètement à quoi allait nous servir certaines
+connaissances (d'ailleurs, un bon nombre n'ont finalement pas été utile). La mise
+en commun prenant beaucoup de temps. Il était parfois nécessaire de rédiger un
+petit document pour résumer les choses apprises durant une semaine afin de mieux
+pouvoir les exploiter et de déterminer si oui ou non elles seront utiles.\\
+
+  \item{\textbf{Compréhension, avancement éparse}}\\
+Et donc suite à cela, venait le temps de la compréhension. Certains aspects techniques
+liés à l'architecture linux bloquaient certains. L'évolution des connaissances de
+chacun était assez éparpillé. De plus en plus, chacun recherchait de son propre
+côté en fonction de ses avancements. Cela à mener à une dispersion néfaste pour
+l'intérêt commun du groupe.\\
+
+  \item{\textbf{Changement fréquent de stratégie suite à de nouvelle découverte}}\\
+Nos avancements nous ont irrémédiablement mené à changer d'idée plusieurs fois
+pour le développement (specification dans la partie suivante). Il était donc assez
+frustrant de se rendre compte que des heures de travail ne seront peut être pas
+utilisés concrètement dans le rendu final. Mais cela fait partie du projet,
+c'est à dire que pour en arriver au meilleur résultat possible, il était important
+d'explorer toutes les pistes possibles pour découvrir de nouvelles choses et ainsi
+réaliser le code le plus pertinent possible, dans le cadre de la philosophie de lockatme.\\
+
+  \item{\textbf{Impliquation de tout le groupe}}\\
+Evidemment vu la liste qui est en train d'être faite, il est assez simple de deviner
+que cette phase à été bien compliqué pour certains membres du groupe, qui ont pu
+prendre du retard dans la compréhension de l'avancement. Mais il était quand même
+important de tenir tout le monde informé, notamment à travers des réunions régulières.
+Il a également été décidé, que les personnes, pour qui la partie développement pure
+était trop complexe, se verraient attibuer des tâches lié à la gestion, au déploiement
+ou à la présentation du projet. Toutefois il est essentiel que chaque membre ait
+connaissance des aspects techniques de l'application.\\
+
+  \item{\textbf{Répartition des tâches lors du développement}}\\
+En lien avec le point précédent et avec un paragraphe du 2.2, dans le développement
+final il y avait assez peu de code (même si très complexe). Il n'y avait pas de
+séparation possible avec differentes couches, comme peu nous offrir le modèle MVC
+par exemple. C'est donc essentiellement le chef de groupe qui a implémenté la partie
+finale. Cependant les recherches de chacuns ont été prise en compte.\\
+
+\end{itemize}
+
+\subsection{Chronologie}
+
+\subsection{Liste des tâches approximative}
+
+\chapter{Technologies utilisées}
+
+\newpage
+
+\section{Liste des technologies explorées}
+
+\section{Technologie utilisée – point technique}
+
+\subsection{Xlib – python}
+
+\subsection{Difficulté rencontrée - multithreading}
+
+\chapter{Version finale}
+
+\newpage
+
+\section{Présentation}
+
+\section{Utilisation - mode d'emploi}
+
+\chapter{Amélioration possible}
+
+\newpage
+
+\section{Interface graphique}
+
+\section{Le futur de lockatme}
+
+\end{document}

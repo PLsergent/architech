@@ -8,7 +8,11 @@
 \usepackage{gensymb}
 \usepackage{graphicx}
 \usepackage{titlesec}
+\usepackage{minted}
 \usepackage{listings}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{51,131,255}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 \usepackage[skins]{tcolorbox}
 \graphicspath{{img/}}
@@ -38,7 +42,7 @@ il nous permettra d’élargir nos savoirs à travers une auto-formation.
 
 \vspace{0.5cm}
 Ce projet se découpe en deux axes :
-\begin{itemize}
+\begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
   \item{Rédaction du cahier des charges (second semestre)}
   \item{Réalisation du projet en lui même (troisième semestre)}
 \end{itemize}
@@ -51,7 +55,7 @@ d’écran par reconnaissance faciale sous Linux.
 
 \subsection{Organisation et membres}
 L’équipe chargée de ce projet est constituée
-\begin{itemize}
+\begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
   \item{Tuteur du projet : M. Vincent VIDAL}
   \item{Chef du projet : M. Bruno INEC}
   \item{Membres : M. David ANANDANADARADJA, Mme Sagar GUEYE, M. Matthieu
@@ -69,14 +73,14 @@ ci-après :
 \\
 
 \textbf{Python} :
-\begin{itemize}
+\begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
   \item{Confirmé : Bruno INEC}
   \item{Intermédiaire : Pierre-Louis SERGENT}
   \item{Débutant : Sagar GUEYE, Matthieu KIRSCHLEGER, David ANANDA}
 \end{itemize}
 
 \textbf{Linux} :
-\begin{itemize}
+\begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
   \item{Confirmé : Bruno INEC}
   \item{Intermédiaire : David ANANDA, Pierre-Louis SERGENT}
   \item{Débutant : Sagar GUEYE, Matthieu KIRSCHLEGER}
@@ -91,7 +95,7 @@ pouvoir se former dans les domaines ci-après. Ils sont essentiels pour la
 suite des études et pour le milieu professionnel.
 
 \vspace{0.5cm}
-\begin{itemize}
+\begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
   \item{Programmation : Linux, Python}
   \item{Rédaction cahier des charges : \LaTeX}
   \item{Travail en équipe : réunion, communication, CI, modèle de
@@ -216,7 +220,7 @@ Il existe cependant une certaine ressemblance, concernant les grandes parties,
 entre l'ancien diagramme et le déroulement réel. A savoir :
 
 \vspace{0.5cm}
-\begin{itemize}
+\begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
   \item{\textbf{Recherche sur l'algorithme pour la reconnaissance faciale}}
   \item{\textbf{Verrouillage et déverrouillage de l'écran, implémentation système}}
   \item{\textbf{Upload pip, amélioration, test}}
@@ -230,7 +234,7 @@ Comme dit auparavant, de nombreuses difficulté ont été rencontré plus tôt q
 Voici une liste exhaustive de celles-ci :
 
 \vspace{0.5cm}
-\begin{itemize}
+\begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
   \item{\textbf{Répartition des recherches}}\\
 Le sujet abordé était très technique et précis, il nécessitait donc beaucoup de
 recherche. Mais la répartition était plutôt compliqué étant donnée que idéalement
@@ -283,8 +287,331 @@ finale. Cependant les recherches de chacuns ont été prise en compte.\\
 \end{itemize}
 
 \subsection{Chronologie}
+\subsubsection{Quelles recherches?}
+
+  L’idée de la reconnaissance faciale nous était venu d’un article de magazine,
+  ainsi la documentation sur cette algorithme est très abondante avec de
+  multiples solutions. Cependant la partie implémentation système et
+  verrouillage sur X11 nous était complètement inconnue il nous fallait donc
+  nous plonger dans la recherche et la documentation pour ces deux aspects.
+\\ \\
+  La première question a été, comment le système gère-t’il le déverrouillage?
+\\ \\
+  L’ensemble du groupe s’est donc plongé dans cette recherche.
+
+  \subsubsection{PAM: Pluggable Authentication Modules} \emph{(Bruno, David,
+  Pierre-Louis, travail en parallèle de Python into C)}\\ \\
+En nous penchant sur des applications de lock sous Linux, tel que i3lock,
+lightDM, nous nous sommes rendus compte qu’elles utilisent toute PAM.
+Ce dernier permet à travers de configs files, contenant des modules, de
+gérer l’authentification. Les applications font appels à PAM en passant en
+paramètre le nom de la config file, qui elle même contient des modules
+d’authentification.
+
+  \begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=0.8\linewidth]{pam}
+    \caption{schéma explication PAM}
+  \end{center}
+  \end{figure}
+
+  Nous nous sommes donc répartis les recherches à partir de la en trois parties
+  (issues de la documentation officielle):
+  \vspace{0.5cm}
+  \begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
+    \item{\textbf{The System Administrators' Guide (Pierre-Louis)}}
+
+    \vspace{0.05cm}
+
+Cette partie concerne les PAM config file contenues dans le répertoire
+\verb|/etc/pam.d|. Elles contiennent les modules PAM qui seront utilisés suite à
+l’appel de PAM par l’application. Il s’agit d’une syntaxe particulière où les
+modules sont regroupés en "type group" : account, auth, password et session.
+Après les types groups, sur la même ligne, vient la "control value", qui va
+définir le comportement de l’application en fonction des valeurs de retour des
+modules. Par exemple: required, sufficient, include, optional… Après la control
+value vient le nom du module PAM utilisé. Ensuite le quatrième argument
+constitue des options diverses que nous ne détailleront pas ici car inutile
+pour notre projet.
+\\ \\
+    Exemple: system-auth \\
+
+    auth      required  \texttt{pam\_unix.so}   \texttt{try\_first\_pass
+    nullok} \\
+    auth      optional  \texttt{pam\_permit.so} \\
+    auth      required  \texttt{pam\_env.so} \\
+
+    account   required  \texttt{pam\_unix.so} \\
+    account   optional  \texttt{pam\_permit.so} \\
+    account   required  \texttt{pam\_time.so} \\
+
+    password  required  \texttt{pam\_unix.so}   \texttt{try\_first\_pass nullok
+    sha512 shadow} \\
+    password  optional  \texttt{pam\_permit.so} \\
+
+    session   required  \texttt{pam\_limits.so} \\
+    session   required  \texttt{pam\_unix.so} \\
+    session   optional  \texttt{pam\_permit.so} \\
+
+\vspace{0.5cm}
+
+    \item{\textbf{The Module Writers' Guide (Bruno)}}
+
+    \vspace{0.05cm}
+
+Sur l’exemple du dessus on voit que le troisième argument de chaque ligne est
+un module PAM. Il est possible d’écrire soit même un module en C. C’est ce qui
+est traité dans cette partie. Cependant cet aspect est très lourd à comprendre.
+Nous nous sommes donc reposé sur des exemples tel que le repository simple-pam
+trouvé sur github. On a donc pu comprendre que chaque type group peut être
+gérer avec une fonction qui peut retourner \texttt{PAM\_SUCCESS ou PAM\_ERR}.
+\\ \\
+    Exemple:
+
+  \begin{minted}{c}
+
+#include <security/pam_appl.h>
+#include <security/pam_modules.h>
+
+/* expected hook, this is where custom stuff happens */
+PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc,
+  const char **argv ) {
+	int retval;
+
+	const char* pUsername;
+	retval = pam_get_user(pamh, &pUsername, "Username: ");
+
+	if (retval != PAM_SUCCESS) {
+		return retval;
+	}
+
+	if (strcmp(pUsername, "papalouis") != 0) {
+		return PAM_AUTH_ERR;
+	}
+
+	return PAM_SUCCESS;
+}
+\end{minted}
+
+\vspace{0.5cm}
+
+    \item{\textbf{The Application Developers' Guide (David)}}
+
+    \vspace{0.05cm}
+
+  Cette partie concerne l’appel du module PAM au sein d’une application. Nous
+  avons retenu que toute utilisation de PAM débute avec un \texttt{pam\_start()}
+  qui contient la config file souhaité. Ensuite si l’appel s’est fait
+  correctement, on peut utiliser la fonction \texttt{pam\_authenticate()} par
+  exemple pour lancer le processus d’authentification par mot de passe ou
+  autre, en fonction des modules utilisés. A la fin du programme il faut fermer
+  le PAM en utilisant \texttt{pam\_end()}.
+\\ \\
+    Exemple:
+
+  \begin{minted}{c}
+
+#include <security/pam_appl.h>
+#include <security/pam_misc.h>
+#include <stdio.h>
+
+const struct pam_conv conv = {
+	misc_conv,
+	NULL
+};
+
+int main(int argc, char *argv[]) {
+	pam_handle_t* pamh = NULL;
+	int retval;
+	const char* user = "nobody";
+
+	if(argc != 2) {
+		printf("Usage: app [username]\n");
+		exit(1);
+	}
+
+	user = argv[1];
+
+	retval = pam_start("face-auth-test", user, &conv, &pamh);
+
+	// Are the credentials correct?
+	if (retval == PAM_SUCCESS) {
+		printf("Credentials accepted.\n");
+		retval = pam_authenticate(pamh, 0);
+	}
+
+	// Can the accound be used at this time?
+	if (retval == PAM_SUCCESS) {
+		printf("Account is valid.\n");
+		retval = pam_acct_mgmt(pamh, 0);
+	}
+
+	// Did everything work?
+	if (retval == PAM_SUCCESS) {
+		printf("Authenticated\n");
+	} else {
+		printf("Not Authenticated\n");
+	}
+
+	// close PAM (end session)
+	if (pam_end(pamh, retval) != PAM_SUCCESS) {
+		pamh = NULL;
+		printf("check_user: failed to release authenticator\n");
+		exit(1);
+	}
+
+	return retval == PAM_SUCCESS ? 0 : 1;
+}
+    \end{minted}
+  \end{itemize}
+
+  \subsubsection{Utilisation}
+
+  Suite à cette phase de recherche, nous commençons à tester un programme en C
+  tout simple. Il prend en argument un nom d’utilisateur, le programme fait
+  appel à PAM avec une config file contenant un module d’authentification écrit
+  par nos soins. Il permet simplement de vérifier si le nom d’utilisateur passé
+  en paramètre est bien celui de la session active. Nous utilisons par la suite
+  le module \texttt{pam\_unix.so} qui permet également de faire une
+  vérification par mot de passe.
+\\ \\
+  Mais nous nous heurtons à un problème, tous les modules PAM sont écrit en C
+  et notre algorithme de reconnaissance faciale est en Python. Il nous fallait
+  donc un module en C qui permettrait de demander une reconnaissance faciale en
+  guise d’authentification.
+\\ \\
+  Suite à des recherches nous trouvons un module déjà écrit en C:
+\texttt{pam\_authentication}. Ce module très bien fait possède une interface
+graphique pour "entraîner" le programme avec des visages capturés avec la
+webcam. Nous utilisons donc ce module pour des programmes simples qui simulent un
+verrouillage dans la CLI,  une fois lancé il demandent une reconnaissance faciale,
+et en cas d’échec demandent un mot de passe. Ensuite nous avons pu modifier un
+locker déjà existant, en implémentant deux \texttt{pam\_start} différent,
+chacun se lançant indépendamment en fonction du choix de l’utilisateur:
+reconnaissance faciale ou mot de passe. Nous avions donc un locker fonctionnel,
+qui laisse le choix à l’utilisateur de déverrouiller par reconnaissance faciale
+ou par mot de passe.
+
+  \subsubsection{Problèmes}
+
+  Cependant cela n’était pas satisfaisant, malgré les nombreuses heures pour
+  arriver à un tel résultat. Nous n’utilisions pas notre algorithme de
+  reconnaissance faciale en Python. Le module écrit en C
+  \texttt{pam\_authenticate} n’était pas de nous. L’utilisation d’un autre
+  locker nous a montré que l’écriture d’une solution pour verrouiller l’écran
+  est loin d’être simple, et nous avions, à ce moment la, un peu négligé ce
+  point, mais nous souhaitions écrire un locker nous même.
+\\ \\
+  C’est pourquoi nous avons assigné de nouvelles tâches à chacun.
+  \begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
+    \item{Un duo faisant des recherches complémentaires sur une
+  solution pour implémenter du python dans du code en C afin de faire appel à
+  notre algorithme de reconnaissance faciale dans un module PAM (Matthieu et
+  Sagar). Nous avions déjà assigné cette tâche lors de la découverte de PAM.}
+    \item{Le reste du groupe travaillant à l’écriture d’un locker en C.}
+  \end{itemize}
+
+  \subsubsection{Python into C}
+
+  Il existe effectivement une bibliothèque en C qui permet d’intégrer du
+  Python dans le code: Python.h.
+\\ \\
+  Exemple:
+
+  \begin{minted}{c}
+
+#include <Python.h>
+
+int main () {
+    // PyObject est un wrapper Python autour des objets qu'on
+    // va échanger entre le C et Python.
+    PyObject *retour, *module, *fonction, *arguments;
+    char *resultat;
+
+    // Initialisation de l'interpréteur. A cause du GIL, on ne peut
+    // avoir qu'une instance de celui-ci à la fois.
+    Py_Initialize();
+
+    // Import du script.
+    PySys_SetPath(".");
+    module = PyImport_ImportModule("biblio");
+
+    // Récupération de la fonction
+    fonction = PyObject_GetAttrString(module, "yolo");
+
+    // Création d'un PyObject de type string. Py_BuildValue peut créer
+    // tous les types de base Python.
+    arguments = Py_BuildValue("(s)","Leroy Jenkins");
+    // Appel de la fonction.
+    retour = PyEval_CallObject(fonction, arguments);
+
+    // Conversion du PyObject obtenu en string C
+    PyArg_Parse(retour, "s", &resultat);
+
+    printf("Resultat: %s\n", resultat);
+
+    // On ferme cet interpréteur.
+    Py_Finalize();
+    return 0;
+}
+  \end{minted}
+
+  \subsubsection{Locker}
+
+  Lors des recherches pour écrire le locker, nous nous sommes inspiré de la même
+  application que celle utilisée auparavant, pour ajouter la solution de
+  reconnaissance faciale. Il s’agit de sxlock. C’est un locker qui se
+  veut simple et qui fait appel à PAM. L’écriture d’un programme de
+  verrouillage est très complexe et nécessite de se pencher sur la
+  documentation de X11 et plus particulièrement sur Xlib qui est la
+  bibliothèque interface pour l’implémentation en C du protocole X. Il se
+  trouve qu’il existe des bindings Python pour cette bibliothèque. De plus nous
+  nous sommes rendus compte que sxlock est en fait un fork du projet slock, un
+  locker assez basique qui n’utilise pas PAM.
+\\
+  En parallèle les recherches sur Python.h montre qu’il est difficile
+  d’utiliser cette bibliothèque pour écrire un module PAM.
+
+  \subsubsection{Abandon de PAM}
+
+  Notre but étant de faire une application en Python nous avons donc pris à ce
+  moment un virage très serré en abandonnant l’idée d’utiliser PAM pour le
+  déverrouillage de lockatme. En effet, à ce moment là il fallait soit écrire un
+  module PAM en C soit utiliser le module \texttt{pam\_authenticate}. Nous
+  manquions de temps et l’utilisation de bindings Xlib semblait donc être plus
+  simple. Cette solution correspondait mieux à l’esprit du
+  projet.
+
+  \subsubsection{Xlib}
+
+  Suite à ce virage compliqué il était difficile de bien répartir les tâches.
+  Chacun à donc réalisé des recherches sur Xlib et sur les bindings mais la
+  répartition compliquée et la difficulté de la tâche restante c’est
+  Bruno notre chef de projet qui a implémenté la version finale de lockatme en
+  rassemblant les connaissances réunis par le groupe et en utilisant
+  l’algorithme de reconnaissance faciale du S2. Ce point sera développé dans le
+  4.
 
 \subsection{Liste des tâches approximative}
+
+Liste tâches:
+  \begin{itemize}[label=\textbullet, font=\normalfont \color{blue}]
+  \item{Recherche PAM: Bruno, David et Pierre-Louis (10h chacun)}
+  \item{Recherche Python into C: Sagar et Matthieu (10h)}
+  \item{Compréhension PAM avec programme et écriture module de test: David et
+  Pierre-Louis (15h)}
+  \item{Programme test python into C: Sagar et Matthieu (8h)}
+  \item{Travail compréhension locker: Bruno, David et Pierre-Louis (10h chacun)}
+  \item{Travail écriture module Python into C: Bruno et Sagar (5h)}
+  \item{Modification locker pour reconnaissance faciale: Pierre-Louis et Matthieu (10h
+environ)}
+  \item{Recherche Xlib: Bruno et Pierre-Louis (10h et 3h environ)}
+  \item{Implémentation finale: Bruno (20h)}
+  \item{Rédaction README: Sagar (4h)}
+  \item{Rédaction compte rendu final: Pierre-Louis et Bruno (10h)}
+  \item{Slides présentation finale: Sagar et Matthieu (6h)}
+\end{itemize}
+
 
 \chapter{Technologies utilisées}
 

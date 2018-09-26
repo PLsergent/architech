@@ -18,15 +18,23 @@
 \contentsline {section}{\numberline {3.2}R\IeC {\'e}partition r\IeC {\'e}alis\IeC {\'e}e}{8}
 \contentsline {subsection}{\numberline {3.2.1}Difficult\IeC {\'e}s rencontr\IeC {\'e}es}{8}
 \contentsline {subsection}{\numberline {3.2.2}Chronologie}{9}
-\contentsline {subsection}{\numberline {3.2.3}Liste des t\IeC {\^a}ches approximative}{9}
-\contentsline {chapter}{\numberline {4}Technologies utilis\IeC {\'e}es}{10}
-\contentsline {section}{\numberline {4.1}Liste des technologies explor\IeC {\'e}es}{11}
-\contentsline {section}{\numberline {4.2}Technologie utilis\IeC {\'e}e \IeC {\textendash } point technique}{11}
-\contentsline {subsection}{\numberline {4.2.1}Xlib \IeC {\textendash } python}{11}
-\contentsline {subsection}{\numberline {4.2.2}Difficult\IeC {\'e} rencontr\IeC {\'e}e - multithreading}{11}
-\contentsline {chapter}{\numberline {5}Version finale}{12}
-\contentsline {section}{\numberline {5.1}Pr\IeC {\'e}sentation}{13}
-\contentsline {section}{\numberline {5.2}Utilisation - mode d'emploi}{13}
-\contentsline {chapter}{\numberline {6}Am\IeC {\'e}lioration possible}{14}
-\contentsline {section}{\numberline {6.1}Interface graphique}{15}
-\contentsline {section}{\numberline {6.2}Le futur de lockatme}{15}
+\contentsline {subsubsection}{Quelles recherches?}{9}
+\contentsline {subsubsection}{PAM: Pluggable Authentication Modules}{10}
+\contentsline {subsubsection}{Utilisation}{13}
+\contentsline {subsubsection}{Probl\IeC {\`e}mes}{13}
+\contentsline {subsubsection}{Python into C}{13}
+\contentsline {subsubsection}{Locker}{14}
+\contentsline {subsubsection}{Abandon de PAM}{14}
+\contentsline {subsubsection}{Xlib}{14}
+\contentsline {subsection}{\numberline {3.2.3}Liste des t\IeC {\^a}ches approximative}{15}
+\contentsline {chapter}{\numberline {4}Technologies utilis\IeC {\'e}es}{16}
+\contentsline {section}{\numberline {4.1}Liste des technologies explor\IeC {\'e}es}{17}
+\contentsline {section}{\numberline {4.2}Technologie utilis\IeC {\'e}e \IeC {\textendash } point technique}{17}
+\contentsline {subsection}{\numberline {4.2.1}Xlib \IeC {\textendash } python}{17}
+\contentsline {subsection}{\numberline {4.2.2}Difficult\IeC {\'e} rencontr\IeC {\'e}e - multithreading}{17}
+\contentsline {chapter}{\numberline {5}Version finale}{18}
+\contentsline {section}{\numberline {5.1}Pr\IeC {\'e}sentation}{19}
+\contentsline {section}{\numberline {5.2}Utilisation - mode d'emploi}{19}
+\contentsline {chapter}{\numberline {6}Am\IeC {\'e}lioration possible}{20}
+\contentsline {section}{\numberline {6.1}Interface graphique}{21}
+\contentsline {section}{\numberline {6.2}Le futur de lockatme}{21}

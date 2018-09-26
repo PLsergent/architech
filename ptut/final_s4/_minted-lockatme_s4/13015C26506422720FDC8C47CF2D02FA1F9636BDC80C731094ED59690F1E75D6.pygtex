@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}security/pam\PYGZus{}appl.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}security/pam\PYGZus{}modules.h\PYGZgt{}}
+
+\PYG{c+cm}{/* expected hook, this is where custom stuff happens */}
+\PYG{n}{PAM\PYGZus{}EXTERN} \PYG{k+kt}{int} \PYG{n+nf}{pam\PYGZus{}sm\PYGZus{}authenticate}\PYG{p}{(} \PYG{n}{pam\PYGZus{}handle\PYGZus{}t} \PYG{o}{*}\PYG{n}{pamh}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{flags}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,}
+  \PYG{k}{const} \PYG{k+kt}{char} \PYG{o}{**}\PYG{n}{argv} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kt}{int} \PYG{n}{retval}\PYG{p}{;}
+
+	\PYG{k}{const} \PYG{k+kt}{char}\PYG{o}{*} \PYG{n}{pUsername}\PYG{p}{;}
+	\PYG{n}{retval} \PYG{o}{=} \PYG{n}{pam\PYGZus{}get\PYGZus{}user}\PYG{p}{(}\PYG{n}{pamh}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{pUsername}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Username: \PYGZdq{}}\PYG{p}{);}
+
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{retval} \PYG{o}{!=} \PYG{n}{PAM\PYGZus{}SUCCESS}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{n}{retval}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{pUsername}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}papalouis\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{n}{PAM\PYGZus{}AUTH\PYGZus{}ERR}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k}{return} \PYG{n}{PAM\PYGZus{}SUCCESS}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,53 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}security/pam\PYGZus{}appl.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}security/pam\PYGZus{}misc.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+
+\PYG{k}{const} \PYG{k}{struct} \PYG{n}{pam\PYGZus{}conv} \PYG{n}{conv} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+	\PYG{n}{misc\PYGZus{}conv}\PYG{p}{,}
+	\PYG{n+nb}{NULL}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{k+kt}{int} \PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,} \PYG{k+kt}{char} \PYG{o}{*}\PYG{n}{argv}\PYG{p}{[])} \PYG{p}{\PYGZob{}}
+	\PYG{n}{pam\PYGZus{}handle\PYGZus{}t}\PYG{o}{*} \PYG{n}{pamh} \PYG{o}{=} \PYG{n+nb}{NULL}\PYG{p}{;}
+	\PYG{k+kt}{int} \PYG{n}{retval}\PYG{p}{;}
+	\PYG{k}{const} \PYG{k+kt}{char}\PYG{o}{*} \PYG{n}{user} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}nobody\PYGZdq{}}\PYG{p}{;}
+
+	\PYG{k}{if}\PYG{p}{(}\PYG{n}{argc} \PYG{o}{!=} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Usage: app [username]}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n}{user} \PYG{o}{=} \PYG{n}{argv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{];}
+
+	\PYG{n}{retval} \PYG{o}{=} \PYG{n}{pam\PYGZus{}start}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}face\PYGZhy{}auth\PYGZhy{}test\PYGZdq{}}\PYG{p}{,} \PYG{n}{user}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{conv}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{pamh}\PYG{p}{);}
+
+	\PYG{c+c1}{// Are the credentials correct?}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{retval} \PYG{o}{==} \PYG{n}{PAM\PYGZus{}SUCCESS}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Credentials accepted.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{retval} \PYG{o}{=} \PYG{n}{pam\PYGZus{}authenticate}\PYG{p}{(}\PYG{n}{pamh}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+c1}{// Can the accound be used at this time?}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{retval} \PYG{o}{==} \PYG{n}{PAM\PYGZus{}SUCCESS}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Account is valid.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{retval} \PYG{o}{=} \PYG{n}{pam\PYGZus{}acct\PYGZus{}mgmt}\PYG{p}{(}\PYG{n}{pamh}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+c1}{// Did everything work?}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{retval} \PYG{o}{==} \PYG{n}{PAM\PYGZus{}SUCCESS}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Authenticated}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+		\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Not Authenticated}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+c1}{// close PAM (end session)}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{pam\PYGZus{}end}\PYG{p}{(}\PYG{n}{pamh}\PYG{p}{,} \PYG{n}{retval}\PYG{p}{)} \PYG{o}{!=} \PYG{n}{PAM\PYGZus{}SUCCESS}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{pamh} \PYG{o}{=} \PYG{n+nb}{NULL}\PYG{p}{;}
+		\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}check\PYGZus{}user: failed to release authenticator}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+		\PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{k}{return} \PYG{n}{retval} \PYG{o}{==} \PYG{n}{PAM\PYGZus{}SUCCESS} \PYG{o}{?} \PYG{l+m+mi}{0} \PYG{o}{:} \PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

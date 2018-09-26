@@ -652,15 +652,30 @@ environ)}
 \newpage
 
 \section{Présentation}
+Nous voici donc avec notre application finale écrite en Python, grâce aux bindings
+pour Xlib. Elle possède plus ou moins les features que nous souhaitions
+implémenter. En effet l'application permet de déverrouiller son ordinateur sous linux
+en utilisant la reconnaissance faciale grâce à une webcam et une photo placée
+en amont dans un dossier spécifique. L'utilisateur peut également déverrouiller
+son écran avec un mot de passe indépendamment de la reconnaissance faciale. C'est
+à dire qu'il y a une utilisation de multithread (détaillé dans la partie précédente).
+La nouvelle idée qui a émergé durant la phase de développement réside dans
+l'aspect modulable de l'application, en laissant la possibilité aux utilisateurs
+de fork le projet pour créer un module permettant une nouvelle manière de
+déverrouiller la machine.\\
+L'application possède tout de même quelques points faibles en ce qui concerne la
+sécurité et la rapidité de la reconnaissance, assez lente à cause des webcams
+d'ordinateur, souvent moins performante.
+
 
 \section{Utilisation - mode d'emploi}
 
-\chapter{Amélioration possible}
+\chapter{Amélioration possible - conclusion}
 
 \newpage
 
 \section{Interface graphique}
 
-\section{Le futur de lockatme}
+\section{Le futur de lockatme - conclusion}
 
 \end{document}

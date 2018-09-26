@@ -35,6 +35,6 @@
 \contentsline {chapter}{\numberline {5}Version finale}{18}
 \contentsline {section}{\numberline {5.1}Pr\IeC {\'e}sentation}{19}
 \contentsline {section}{\numberline {5.2}Utilisation - mode d'emploi}{19}
-\contentsline {chapter}{\numberline {6}Am\IeC {\'e}lioration possible}{20}
+\contentsline {chapter}{\numberline {6}Am\IeC {\'e}lioration possible - conclusion}{20}
 \contentsline {section}{\numberline {6.1}Interface graphique}{21}
-\contentsline {section}{\numberline {6.2}Le futur de lockatme}{21}
+\contentsline {section}{\numberline {6.2}Le futur de lockatme - conclusion}{21}
